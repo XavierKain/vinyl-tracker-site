@@ -83,8 +83,8 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--text);
 .toc a:hover { text-decoration: underline; }
 
 /* === CTA BOX === */
-.cta-box { background: #0D0D0D; border: 1px solid #242420; border-radius: var(--radius); padding: 2rem; text-align: center; margin: 2.5rem 0; box-shadow: var(--shadow); }
-.cta-box h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; color: #e8e5df; margin-bottom: .5rem; }
+.cta-box { background: #0D0D0D; border: 1px solid #242420; border-radius: var(--radius); padding: 1.5rem 2rem; text-align: center; margin: 2.5rem 0; box-shadow: var(--shadow); }
+.cta-box h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 400; color: #e8e5df; margin-bottom: .3rem; }
 .cta-box p { color: #8a857d; margin-bottom: 1.2rem; }
 .cta-box .btn { display: inline-block; background: var(--gold-light); color: #0D0D0D !important; padding: .8rem 1.8rem; border-radius: 8px; font-weight: 700; text-decoration: none; transition: all .2s; font-family: var(--font-body); }
 .cta-box .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); background: #e0b550; }
