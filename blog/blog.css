@@ -86,3 +86,96 @@ nav .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: fl
     .blog-header { padding: 80px 24px 32px; }
     .article-header { padding: 80px 24px 32px; }
 }
+
+/* TABLE OF CONTENTS — inline, not sticky */
+.toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 32px 0 40px;
+}
+.toc h2 {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin: 0 0 16px;
+}
+.toc ol {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-muted);
+}
+.toc li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.toc a { color: var(--gold); }
+.toc a:hover { text-decoration: underline; }
+
+/* CTA BOX — like RBT exam prep */
+.cta-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 16px;
+    padding: 40px 32px;
+    margin: 48px 0;
+    text-align: center;
+}
+.cta-box h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+.cta-box p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta-box .btn {
+    background: var(--gold);
+    color: #0D0D0D !important;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s;
+}
+.cta-box .btn:hover {
+    background: #e0b550;
+    box-shadow: 0 4px 24px rgba(212,168,67,0.3);
+    transform: translateY(-1px);
+}
+
+/* Inline CTA (mid-article) */
+.cta-inline {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px;
+    margin: 32px 0;
+    text-align: center;
+}
+.cta-inline .cta-icon { font-size: 1.5rem; margin-bottom: 8px; }
+.cta-inline p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px; }
+.cta-inline .btn {
+    background: var(--gold);
+    color: #0D0D0D !important;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
