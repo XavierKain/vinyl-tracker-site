@@ -14,12 +14,23 @@
     <link rel="stylesheet" href="blog.css">
 </head>
 <body>
-<nav class="blog-nav">
+<nav>
     <div class="container">
-        <a href="/vinyl-tracker-site/" class="logo"><span>🎵</span> Vinyl Tracker</a>
-        <ul class="blog-nav-links">
-            <li><a href="/vinyl-tracker-site/">App</a></li>
-            <li><a href="/vinyl-tracker-site/blog/">Blog</a></li>
+        <a href="/vinyl-tracker/" class="logo">
+            <span class="logo-mark"></span>
+            Vinyl Tracker
+        </a>
+        <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/vinyl-tracker/#features">Features</a></li>
+            <li><a href="/vinyl-tracker/#pricing">Pricing</a></li>
+            <li><a href="/vinyl-tracker/#faq">FAQ</a></li>
+            <li><a href="/vinyl-tracker/blog/">Blog</a></li>
+            <li><a href="/vinyl-tracker/app/" class="btn btn-gold">Get the App</a></li>
         </ul>
     </div>
 </nav>
@@ -59,7 +70,7 @@
 
 <footer class="blog-footer">
     <div class="container">
-        <p>© 2025 Vinyl Tracker. All rights reserved. · <a href="/vinyl-tracker-site/">Back to App</a></p>
+        <p>© 2025 Vinyl Tracker. All rights reserved. · <a href="/vinyl-tracker/">Back to App</a></p>
     </div>
 </footer>
 </body>

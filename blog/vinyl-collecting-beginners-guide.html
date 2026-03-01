@@ -29,12 +29,23 @@
     <link rel="stylesheet" href="blog.css">
 </head>
 <body>
-<nav class="blog-nav">
+<nav>
     <div class="container">
-        <a href="/vinyl-tracker-site/" class="logo"><span>🎵</span> Vinyl Tracker</a>
-        <ul class="blog-nav-links">
-            <li><a href="/vinyl-tracker-site/">App</a></li>
-            <li><a href="/vinyl-tracker-site/blog/">Blog</a></li>
+        <a href="/vinyl-tracker/" class="logo">
+            <span class="logo-mark"></span>
+            Vinyl Tracker
+        </a>
+        <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/vinyl-tracker/#features">Features</a></li>
+            <li><a href="/vinyl-tracker/#pricing">Pricing</a></li>
+            <li><a href="/vinyl-tracker/#faq">FAQ</a></li>
+            <li><a href="/vinyl-tracker/blog/">Blog</a></li>
+            <li><a href="/vinyl-tracker/app/" class="btn btn-gold">Get the App</a></li>
         </ul>
     </div>
 </nav>
@@ -225,7 +236,7 @@
 
 <p>Once you've accumulated more than a few dozen records, cataloging becomes valuable. A digital catalog lets you search your collection from anywhere, avoid duplicate purchases, and maintain a record of what you own for insurance purposes.</p>
 
-<p>The simplest modern approach is to use a dedicated app like <a href="/vinyl-tracker-site/">Vinyl Tracker</a> that lets you scan barcodes to automatically catalog records. Point your phone at the barcode, confirm the album details, and save. A 200-record collection can be cataloged in under an hour this way.</p>
+<p>The simplest modern approach is to use a dedicated app like <a href="/vinyl-tracker/">Vinyl Tracker</a> that lets you scan barcodes to automatically catalog records. Point your phone at the barcode, confirm the album details, and save. A 200-record collection can be cataloged in under an hour this way.</p>
 
 <p>For a comprehensive guide to cataloging methods, tools, and best practices, read our article on <a href="how-to-catalog-vinyl-collection.html">how to catalog your vinyl collection</a>. And for a detailed comparison of available cataloging apps, see our <a href="best-vinyl-record-apps-2025.html">best vinyl record apps in 2025</a> roundup.</p>
 
@@ -245,7 +256,7 @@
 
 <p><strong>Ignoring used records.</strong> Some beginners only buy new vinyl, which is expensive and limits selection. Used records in VG+ or better condition sound nearly identical to new ones and cost a fraction of the price. Some of the best records ever made are available used for $5-10.</p>
 
-<p><strong>Not cataloging.</strong> Once you have 100+ records, memory becomes unreliable. You'll buy duplicates, forget what you own, and have no documentation for insurance. Catalog early, catalog consistently. Tools like <a href="/vinyl-tracker-site/">Vinyl Tracker</a> make it painless.</p>
+<p><strong>Not cataloging.</strong> Once you have 100+ records, memory becomes unreliable. You'll buy duplicates, forget what you own, and have no documentation for insurance. Catalog early, catalog consistently. Tools like <a href="/vinyl-tracker/">Vinyl Tracker</a> make it painless.</p>
 
 <p><strong>Going down the audiophile rabbit hole too early.</strong> It's tempting to obsess over cartridge upgrades, speaker placement, and cable quality before you've even built a meaningful collection. Enjoy the music first. Upgrade your equipment gradually as your ears develop and your budget allows. The biggest sound quality improvement comes from better records, not better equipment.</p>
 
@@ -272,7 +283,7 @@
     <li><strong>Get speakers.</strong> If your turntable has a built-in preamp, pair it with powered speakers. Edifier R1280T ($100) is the value champion.</li>
     <li><strong>Buy 3-5 records you love.</strong> Start with albums you already know and love. Buy at least one from a local record shop to start building that relationship.</li>
     <li><strong>Get a carbon fiber brush.</strong> $15, use it before every play, no exceptions.</li>
-    <li><strong>Start cataloging early.</strong> Download <a href="/vinyl-tracker-site/">Vinyl Tracker</a> and scan your first records. Building the habit now saves you from a tedious backlog later.</li>
+    <li><strong>Start cataloging early.</strong> Download <a href="/vinyl-tracker/">Vinyl Tracker</a> and scan your first records. Building the habit now saves you from a tedious backlog later.</li>
     <li><strong>Listen intentionally.</strong> Put on a record, sit down, and listen to a full side without doing anything else. This is what vinyl is really about.</li>
 </ol>
 
@@ -281,14 +292,14 @@
 <div class="cta-box">
     <h3>Catalog Your First Records</h3>
     <p>Start your collection the right way. Vinyl Tracker lets you scan, catalog, and organize from day one — offline, private, no subscription.</p>
-    <a href="/vinyl-tracker-site/" class="btn">Get Vinyl Tracker — $4.99</a>
+    <a href="/vinyl-tracker/" class="btn">Get Vinyl Tracker — $4.99</a>
 </div>
 
 </main>
 
 <footer class="blog-footer">
     <div class="container">
-        <p>© 2025 Vinyl Tracker. All rights reserved. · <a href="/vinyl-tracker-site/">Back to App</a> · <a href="/vinyl-tracker-site/blog/">All Articles</a></p>
+        <p>© 2025 Vinyl Tracker. All rights reserved. · <a href="/vinyl-tracker/">Back to App</a> · <a href="/vinyl-tracker/blog/">All Articles</a></p>
     </div>
 </footer>
 </body>
