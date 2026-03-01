@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinyl Tracker — Catalog Your Record Collection Instantly</title>
+    <meta name="description" content="Vinyl Tracker is the easiest way to catalog, organize, and track your vinyl record collection. Scan barcodes, get album details from MusicBrainz, and manage your collection offline.">
+    <meta name="keywords" content="vinyl tracker, record collection app, vinyl catalog, barcode scanner vinyl, MusicBrainz, vinyl collection manager">
+    <meta name="author" content="Vinyl Tracker">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vinyltracker.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vinyl Tracker — Catalog Your Record Collection Instantly">
+    <meta property="og:description" content="Scan barcodes, pull album data from MusicBrainz, and manage your entire vinyl collection offline. One-time purchase, no subscriptions.">
+    <meta property="og:url" content="https://vinyltracker.app/">
+    <meta property="og:site_name" content="Vinyl Tracker">
+    <meta property="og:image" content="https://vinyltracker.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vinyl Tracker — Catalog Your Record Collection Instantly">
+    <meta name="twitter:description" content="Scan barcodes, pull album data from MusicBrainz, and manage your entire vinyl collection offline.">
+    <meta name="twitter:image" content="https://vinyltracker.app/og-image.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Vinyl Tracker",
+        "description": "A progressive web app for vinyl record collectors. Scan barcodes, get album details from MusicBrainz, manage your collection offline.",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "4.99",
+            "priceCurrency": "USD"
+        },
+        "featureList": ["Barcode scanning","MusicBrainz API integration","Offline-first architecture","Collection statistics","Import and export","Collection management"],
+        "url": "https://vinyltracker.app"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{--bg:#0a0a0f;--bg-card:#12121a;--bg-card-hover:#1a1a25;--text:#e8e8ed;--text-muted:#8888a0;--accent:#e8820e;--accent-light:#f5a623;--accent-glow:rgba(232,130,14,0.15);--border:#1e1e2e;--radius:12px}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+        a{color:inherit;text-decoration:none}
+        .container{max-width:1120px;margin:0 auto;padding:0 24px}
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+        nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+        .logo{font-weight:800;font-size:1.2rem;display:flex;align-items:center;gap:8px}
+        .logo-icon{width:32px;height:32px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
+        .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+        .nav-links a{font-size:.9rem;font-weight:500;color:var(--text-muted);transition:color .2s}
+        .nav-links a:hover{color:var(--text)}
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;transition:all .2s;font-family:inherit}
+        .btn-primary{background:var(--accent);color:#fff}
+        .btn-primary:hover{background:var(--accent-light);transform:translateY(-1px);box-shadow:0 8px 24px rgba(232,130,14,0.3)}
+        .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+        .btn-ghost:hover{border-color:var(--text-muted)}
+        .btn-lg{padding:14px 32px;font-size:1rem;border-radius:10px}
+        .hero{padding:160px 0 100px;text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 70%);pointer-events:none}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:var(--accent-glow);border:1px solid rgba(232,130,14,0.2);border-radius:100px;font-size:.85rem;font-weight:500;color:var(--accent-light);margin-bottom:24px}
+        .hero h1{font-size:clamp(2.5rem,6vw,4rem);font-weight:800;line-height:1.1;margin-bottom:20px;letter-spacing:-.02em}
+        .hero h1 .gradient{background:linear-gradient(135deg,var(--accent),var(--accent-light),#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero p{font-size:1.15rem;color:var(--text-muted);max-width:560px;margin:0 auto 36px;line-height:1.7}
+        .hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .hero-stats{display:flex;justify-content:center;gap:48px;margin-top:64px;padding-top:48px;border-top:1px solid var(--border)}
+        .hero-stat strong{display:block;font-size:1.5rem;font-weight:700}
+        .hero-stat span{font-size:.85rem;color:var(--text-muted)}
+        .section{padding:100px 0}
+        .section-label{font-size:.85rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+        .section-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;margin-bottom:16px;letter-spacing:-.01em}
+        .section-subtitle{color:var(--text-muted);font-size:1.05rem;max-width:540px;line-height:1.7}
+        .section-header{text-align:center;margin-bottom:64px}
+        .section-header .section-subtitle{margin:0 auto}
+        .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+        .feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all .3s}
+        .feature-card:hover{background:var(--bg-card-hover);border-color:rgba(232,130,14,0.2);transform:translateY(-2px)}
+        .feature-icon{width:48px;height:48px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+        .feature-card h3{font-size:1.1rem;font-weight:600;margin-bottom:8px}
+        .feature-card p{color:var(--text-muted);font-size:.9rem;line-height:1.6}
+        .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px}
+        .step{text-align:center}
+        .step-number{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),var(--accent-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;margin:0 auto 20px;color:#fff}
+        .step h3{font-size:1.1rem;font-weight:600;margin-bottom:8px}
+        .step p{color:var(--text-muted);font-size:.9rem;line-height:1.6}
+        .pricing-card{max-width:440px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:48px;text-align:center;position:relative;overflow:hidden}
+        .pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-light),#ffd700)}
+        .pricing-card .price{font-size:3rem;font-weight:800;margin:16px 0 4px}
+        .pricing-card .price-sub{color:var(--text-muted);font-size:.9rem;margin-bottom:32px}
+        .pricing-features{list-style:none;text-align:left;margin-bottom:32px}
+        .pricing-features li{padding:10px 0;font-size:.95rem;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border)}
+        .pricing-features li:last-child{border:none}
+        .check{color:var(--accent);font-weight:700}
+        .faq-list{max-width:680px;margin:0 auto}
+        .faq-item{border-bottom:1px solid var(--border);padding:24px 0}
+        .faq-item summary{font-weight:600;font-size:1.05rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+        .faq-item summary::after{content:'+';font-size:1.3rem;color:var(--text-muted)}
+        .faq-item[open] summary::after{content:'−'}
+        .faq-item p{color:var(--text-muted);font-size:.95rem;margin-top:12px;line-height:1.7}
+        .cta-section{text-align:center;padding:80px 0 100px}
+        .cta-section h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;margin-bottom:16px}
+        .cta-section p{color:var(--text-muted);font-size:1.05rem;margin-bottom:32px}
+        footer{border-top:1px solid var(--border);padding:48px 0}
+        .footer-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+        .footer-links{display:flex;gap:24px;list-style:none}
+        .footer-links a{font-size:.85rem;color:var(--text-muted);transition:color .2s}
+        .footer-links a:hover{color:var(--text)}
+        .footer-copy{font-size:.85rem;color:var(--text-muted)}
+        .menu-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+        @media(max-width:768px){.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(10,10,15,0.98);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--border)}.nav-links.open{display:flex}.hero-stats{gap:24px;flex-wrap:wrap}}
+        @media(max-width:480px){.hero{padding:120px 0 64px}.section{padding:64px 0}.pricing-card{padding:32px 24px}}
+    </style>
+</head>
+<body>
+<nav>
+    <div class="container">
+        <a href="/" class="logo"><span class="logo-icon">🎵</span> Vinyl Tracker</a>
+        <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/vinyl-tracker/app/" class="btn btn-primary">Get Started</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">🔥 Now available as a PWA</div>
+        <h1>Every Record You Own,<br><span class="gradient">Finally Organized</span></h1>
+        <p>Scan a barcode, get instant album details, and build a beautiful catalog of your vinyl collection. Works offline. No subscription. Just your records, organized.</p>
+        <div class="hero-buttons">
+            <a href="/vinyl-tracker/app/" class="btn btn-primary btn-lg">Start Cataloging — $4.99</a>
+            <a href="#features" class="btn btn-ghost btn-lg">See Features</a>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat"><strong>50M+</strong><span>Albums in MusicBrainz</span></div>
+            <div class="hero-stat"><strong>100%</strong><span>Offline Capable</span></div>
+            <div class="hero-stat"><strong>$0/mo</strong><span>No Subscriptions</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="features">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label">Features</p>
+            <h2 class="section-title">Everything a Collector Needs</h2>
+            <p class="section-subtitle">Built by collectors, for collectors. No bloat, no ads, no monthly fees.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon">📷</div><h3>Barcode Scanning</h3><p>Point your camera at any vinyl barcode and instantly identify the album. Works with UPC, EAN, and catalog numbers.</p></div>
+            <div class="feature-card"><div class="feature-icon">🎶</div><h3>MusicBrainz Integration</h3><p>Automatically pull artist, album, tracklist, release year, label, and cover art from the world's largest open music database.</p></div>
+            <div class="feature-card"><div class="feature-icon">📊</div><h3>Collection Stats</h3><p>See your collection at a glance — total records, genres, decades, most-collected artists, and estimated value insights.</p></div>
+            <div class="feature-card"><div class="feature-icon">📴</div><h3>Offline First</h3><p>Your entire collection lives on your device. Browse, search, and edit without an internet connection. Your data is always yours.</p></div>
+            <div class="feature-card"><div class="feature-icon">📦</div><h3>Import & Export</h3><p>Bring in your existing collection from CSV or Discogs. Export anytime as JSON or CSV. Zero lock-in, full portability.</p></div>
+            <div class="feature-card"><div class="feature-icon">⚡</div><h3>Lightning Fast</h3><p>Built as a PWA with localStorage and IndexedDB. No server roundtrips. Your catalog loads in milliseconds, every time.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="how-it-works" style="background:var(--bg-card)">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label">How It Works</p>
+            <h2 class="section-title">Three Steps to a Perfect Catalog</h2>
+            <p class="section-subtitle">Getting started takes less than a minute. No accounts, no sign-ups.</p>
+        </div>
+        <div class="steps">
+            <div class="step"><div class="step-number">1</div><h3>Scan or Search</h3><p>Point your camera at the barcode on your vinyl sleeve, or search by artist and album name.</p></div>
+            <div class="step"><div class="step-number">2</div><h3>Confirm & Save</h3><p>Review the album details pulled from MusicBrainz, add your own notes or condition rating, and save.</p></div>
+            <div class="step"><div class="step-number">3</div><h3>Browse & Enjoy</h3><p>Explore your collection with filters, stats, and search. Export anytime. It's your data — forever.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label">Pricing</p>
+            <h2 class="section-title">Simple, Honest Pricing</h2>
+            <p class="section-subtitle">One payment. No subscriptions. No hidden fees. Lifetime access.</p>
+        </div>
+        <div class="pricing-card">
+            <p class="section-label">Lifetime License</p>
+            <p class="price">$4.99</p>
+            <p class="price-sub">One-time payment · All features included</p>
+            <ul class="pricing-features">
+                <li><span class="check">✓</span> Unlimited records</li>
+                <li><span class="check">✓</span> Barcode scanning</li>
+                <li><span class="check">✓</span> MusicBrainz lookup</li>
+                <li><span class="check">✓</span> Collection statistics</li>
+                <li><span class="check">✓</span> Import & export (CSV, JSON)</li>
+                <li><span class="check">✓</span> Offline access</li>
+                <li><span class="check">✓</span> All future updates</li>
+            </ul>
+            <a href="/vinyl-tracker/app/" class="btn btn-primary btn-lg" style="width:100%">Get Vinyl Tracker</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="faq" style="background:var(--bg-card)">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item"><summary>Does Vinyl Tracker work without internet?</summary><p>Yes! Vinyl Tracker is built offline-first. Your entire collection is stored locally on your device using IndexedDB and localStorage. You can browse, search, and edit your catalog without any internet connection. You only need internet when scanning a new barcode to fetch album data from MusicBrainz.</p></details>
+            <details class="faq-item"><summary>Can I import my Discogs collection?</summary><p>Absolutely. You can export your Discogs collection as a CSV file and import it directly into Vinyl Tracker. The app will match your records against MusicBrainz to fill in any missing metadata. You can also import from any standard CSV format.</p></details>
+            <details class="faq-item"><summary>What devices does it run on?</summary><p>Vinyl Tracker is a Progressive Web App (PWA), which means it runs in any modern browser on any device — iPhone, Android, iPad, laptop, desktop. You can install it to your home screen for a native app experience. No app store needed.</p></details>
+            <details class="faq-item"><summary>Is my data safe? Where is it stored?</summary><p>Your data lives entirely on your device. We don't have servers storing your collection — it's 100% local. You can export your entire catalog as JSON or CSV at any time for backup. Your data is yours; we never see it, sell it, or lose it.</p></details>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Organize Your Collection?</h2>
+        <p>Join thousands of vinyl collectors who finally know exactly what they own.</p>
+        <a href="/vinyl-tracker/app/" class="btn btn-primary btn-lg">Get Vinyl Tracker — $4.99</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-copy">© 2025 Vinyl Tracker. All rights reserved.</div>
+            <ul class="footer-links">
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/vinyl-tracker/app/">Privacy Policy</a></li>
+                <li><a href="/vinyl-tracker/app/">Terms</a></li>
+                <li><a href="/vinyl-tracker/app/">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
